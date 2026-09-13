@@ -1,0 +1,26 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: Dist16384
+      url-base: https://github.com/Dist16384
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3-branch
+      import: app/west.yml
+    # Cygnus 販売元 (Dist16384) 同梱の pmw3610 ドライバ。再現性のためコミット固定。
+    # automouse-layer プロパティは使わず、オートマウスは本リポジトリの
+    # input-processors (zip_temp_layer) 側で実現する。
+    - name: zmk-pmw3610-driver
+      remote: Dist16384
+      revision: c5e190c90bd03dc450105fde12d676bc34e6825e
+      path: modules/zmk-pmw3610-driver
+    # バッテリー残量・レイヤー状態を RGB LED で表示するウィジェット
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: v0.3
+  self:
+    path: config

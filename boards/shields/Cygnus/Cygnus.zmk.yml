@@ -1,0 +1,8 @@
+file_format: "1"
+id: Cygnus
+name: Cygnus
+type: shield
+url: https://github.com/tact-software/zmk-config-cygnus
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
