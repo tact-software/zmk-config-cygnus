@@ -1,4 +1,9 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30
+/*
+ * エンコーダ1ノッチあたりのホイール量。Cygnusのエンコーダは24ノッチ/回転
+ * (roBaの12ノッチより細かい)ため、roBaの30では進みが遅い。販売元調整値の
+ * 120を採用。行き過ぎなら60〜90へ。
+ */
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
